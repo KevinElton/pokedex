@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-brand">
+            <img src="download.jpg" alt="Pokedex" class="logo">
+            <button class="hamburger" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="#" onclick="showHome()" class="active">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <a href="#" onclick="showFavorites()">
+                    <i class="fas fa-star"></i> Favorites
+                </a>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="search-input" placeholder="Search Pokémon...">
+                    <button id="search-btn" onclick="searchPokemon()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <div id="loading" class="loading-container">
+            <div class="pokeball-spinner"></div>
+            <p>Loading Pokémon...</p>
+        </div>
+
+        <div id="home-container" class="pokemon-container"></div>
+        <div id="favorites-container" class="pokemon-container" style="display: none;"></div>
+
+        <div id="pokemon-modal" class="modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div id="pokemon-details" class="pokemon-details"></div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
